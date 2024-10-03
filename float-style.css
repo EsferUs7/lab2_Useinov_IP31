@@ -74,6 +74,8 @@ h1 {
 }
 
 .nav-item::after {
+    content: "";
+    display: block;
     clear: both;
 }
 
@@ -82,7 +84,7 @@ h1 {
 }
 
 .nav::after {
-    content: '';
+    content: "";
     display: block;
     clear: both;
 }
@@ -91,15 +93,12 @@ h2, h3, h4, h5, h6 {
     padding: 10px;
 }
 
-.main {
-    width: 100%;
-}
-
 .left-part {
     float: left;
+    display: flow-root;
     width: 18.18%;
-    margin-right: 0;
-    height: auto;
+    margin-right: 9.09%;
+    height: 100vh;
     background-color: rgb(228, 228, 228, 0.6);
 }
 
@@ -111,29 +110,21 @@ h2, h3, h4, h5, h6 {
 .middle-part {
     float: left;
     width: 18.18%;
-    margin-right: 0;
-    height: auto;
-    background-color: rgb(226, 226, 251, 0.6);
-}
-
-.mar {
-    float: left;
-    width: clamp(9vw, 9vw, 9vw);
-    height: 80vh;
+    margin-right: 9.09%;
+    height: 100vh;
+    background-color: rgba(226, 226, 251, 0.6);
 }
 
 .right-part {
     float: left;
     width: 45.46%;
-    height: auto;
+    height: 100vh;
 }
 
 .right-part::after {
+    content: "";
+    display: block;
     clear: both;
-}
-
-.right-grid-container {
-    height: 100%;
 }
 
 .right-part-header {
@@ -148,18 +139,12 @@ h2, h3, h4, h5, h6 {
 .left-info-bar {
     float: right;
     width: 40%;
-    margin-right: 0;
+    margin-right: 20%;
     background-color: rgb(193, 223, 250, 0.6);
 }
 
 .left-info-bar > ol {
     padding: 0 30px;
-}
-
-.mar-info-bar {
-    float: right;
-    width: clamp(0, 20%, 20%);
-    height: 100px;
 }
 
 .right-info-bar {
@@ -188,4 +173,44 @@ h2, h3, h4, h5, h6 {
 
 .footer .container h1 {
     text-align: right;
+}
+
+@media (max-width: 800px) {
+    .left-part {
+        float: left;
+        display: flow-root;
+        width: 25%;
+        margin-right: 0;
+        height: 100vh;
+        background-color: rgb(228, 228, 228, 0.6);
+    }
+
+    .middle-part {
+        float: left;
+        width: 25%;
+        margin-right: 0;
+        height: 100vh;
+        background-color: rgb(226, 226, 251, 0.6);
+    }
+
+    .right-part {
+        float: left;
+        width: 50%;
+        height: 100vh;
+        height: auto;
+    }
+    
+    .left-info-bar {
+        float: right;
+        width: 49%;
+        margin-right: 2%;
+        background-color: rgb(193, 223, 250, 0.6);
+    }
+
+    .right-info-bar {
+        float: right;
+        width: 49%;
+        background-color: rgb(202, 255, 234, 0.6);
+        opacity: 0.8;
+    }
 }
